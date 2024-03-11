@@ -99,5 +99,53 @@ Elements are: 1 2 2 3 4
 4
 
 
+Here is the another program to print unique elements in an array
+
+import java.util.Scanner;
+public class Day20 {
+    static void  printUniqueElements(int[] ar) 
+    {
+        int count = 1;
+        for(int i = 0; i < ar.length-1; i++)
+        {
+            if (ar[i] == ar[i+1])
+            {
+                count++;
+                
+            }
+            else 
+            {
+                if (count == 1) {
+                     System.out.println(ar[i]);
+                   
+                }
+                count = 1;
+            }
+        }
+         System.out.println(ar[ar.length-1]);
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] ar = new int[n];
+        for(int i = 0; i < ar.length; i++) 
+        {
+            ar[i] = scan.nextInt();
+        }
+        
+        
+        printUniqueElements(ar);
+        
+    }
+}
+
+out put:
+No.of elements in array: 7
+Elements are: 1 2 2 3 4 4 5
+1
+3
+5
+
 
 
